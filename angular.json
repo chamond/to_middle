@@ -25,6 +25,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/material-colors/dist"
+              ]
+            },
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
