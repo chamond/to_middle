@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenerativeOperatorsComponent } from "./rxjs/generative-operators/generative-operators.component";
+// @ts-ignore
+import { jsAnimationsInit } from './js-animations';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,11 @@ import { GenerativeOperatorsComponent } from "./rxjs/generative-operators/genera
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  title = 'polygon';
+  title = 'training';
 
   public ngOnInit(): void {
     const generative = new GenerativeOperatorsComponent();
     generative.ngOnInit();
+    jsAnimationsInit();
   }
 }
