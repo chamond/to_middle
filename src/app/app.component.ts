@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { GenerativeOperatorsComponent } from './rxjs/generative-operators/generative-operators.component';
+import { rxjsInit } from './rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('jsAnimationElement') public jsAnimationElement: ElementRef;
 
   public ngOnInit(): void {
-    const generative = new GenerativeOperatorsComponent();
-    generative.ngOnInit();
+    rxjsInit();
   }
 
   public ngAfterViewInit(): void {
