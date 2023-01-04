@@ -5,9 +5,14 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Polygon</title>
+	<title>Demo middle</title>
 </head>
 <body>
-	<app-js-animation></app-js-animation>
+	<app-demo-element headerText="JS ANIMATION">
+		<div class="js-animation-element" #jsAnimationElement></div>
+	</app-demo-element>
+	<app-demo-element headerText="FILE READER">
+		<input type="file" (change)="onFileLoad($event)">
+	</app-demo-element>
 </body>
 </html>
