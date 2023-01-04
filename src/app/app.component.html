@@ -14,5 +14,8 @@
 	<app-demo-element headerText="FILE READER">
 		<input type="file" (change)="onFileLoad($event)">
 	</app-demo-element>
+	<app-demo-element headerText="ASYNC PIPE">
+		pipe value: {{ asyncValue | async }}
+	</app-demo-element>
 </body>
 </html>

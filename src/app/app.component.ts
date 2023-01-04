@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { rxjsInit } from './rxjs';
+import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
+import { RxJSExamples } from './rxjs';
+import { BehaviorSubject, interval, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,17 @@ import { rxjsInit } from './rxjs';
 export class AppComponent implements OnInit, AfterViewInit {
 
   public title: string = 'demo';
+  public asyncValue: Observable<number> = interval(1000);
 
   @ViewChild('jsAnimationElement') public jsAnimationElement: ElementRef;
 
+  constructor(
+    private injector: Injector
+  ) {}
+
   public ngOnInit(): void {
-    rxjsInit();
+    const rxJSExamples = new RxJSExamples(this.injector);
+
   }
 
   public ngAfterViewInit(): void {
