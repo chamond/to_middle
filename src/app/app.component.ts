@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
 import { RxJSExamples } from './rxjs';
-import { BehaviorSubject, interval, Observable } from 'rxjs';
+import { interval, Observable } from 'rxjs';
+import { WebSocketExample } from './websocket';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public ngOnInit(): void {
     const rxJSExamples = new RxJSExamples(this.injector);
-
+    const socketExample = new WebSocketExample();
   }
 
   public ngAfterViewInit(): void {
