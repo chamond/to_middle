@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild } fro
 import { RxJSExamples } from './rxjs';
 import { interval, Observable } from 'rxjs';
 import { WebSocketExample } from './websocket';
+import WorkerPerson from './patterns/prototype';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   public ngOnInit(): void {
     const rxJSExamples = new RxJSExamples(this.injector);
     const socketExample = new WebSocketExample();
+    const worker1 = new WorkerPerson('Mark', 'Johnson', 'frontend-developer');
+    const worker2 = worker1.clone();
+    worker2.post = 'backend-developer';
+    // console.log(worker1, worker2);
   }
 
   public ngAfterViewInit(): void {
