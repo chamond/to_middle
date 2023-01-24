@@ -5,6 +5,7 @@ import { WebSocketExample } from './websocket';
 import WorkerPerson from './patterns/prototype';
 import { SuperCar } from './patterns/decorator';
 import { IPhone } from './patterns/composite';
+import { commandApplication } from './patterns/command';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     bmw.wroom();
     bmw.superWroom();
     console.log(new IPhone().getPrice());
+    commandApplication();
     // console.log(worker1, worker2);
   }
 
