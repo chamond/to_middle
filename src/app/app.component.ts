@@ -3,6 +3,7 @@ import { RxJSExamples } from './rxjs';
 import { interval, Observable } from 'rxjs';
 import { WebSocketExample } from './websocket';
 import WorkerPerson from './patterns/prototype';
+import { SuperCar } from './patterns/decorator';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     const worker1 = new WorkerPerson('Mark', 'Johnson', 'frontend-developer');
     const worker2 = worker1.clone();
     worker2.post = 'backend-developer';
+    const bmw = new SuperCar('bmw', 'x5');
+    bmw.wroom();
+    bmw.superWroom();
     // console.log(worker1, worker2);
   }
 

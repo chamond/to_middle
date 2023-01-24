@@ -5,7 +5,7 @@ export class WebSocketExample {
       console.log(event);
     };
     socket.onmessage = (event) => {
-      alert(`Message: ${event.data}`);
+      console.log(`Message: ${event.data}`);
     };
     socket.onclose = () => {
       console.log('close');
