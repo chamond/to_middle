@@ -4,6 +4,7 @@ import { interval, Observable } from 'rxjs';
 import { WebSocketExample } from './websocket';
 import WorkerPerson from './patterns/prototype';
 import { SuperCar } from './patterns/decorator';
+import { IPhone } from './patterns/composite';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     const bmw = new SuperCar('bmw', 'x5');
     bmw.wroom();
     bmw.superWroom();
+    console.log(new IPhone().getPrice());
     // console.log(worker1, worker2);
   }
 
