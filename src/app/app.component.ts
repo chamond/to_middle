@@ -7,6 +7,7 @@ import { SuperCar } from './patterns/decorator';
 import { IPhone } from './patterns/composite';
 import { commandApplication } from './patterns/command';
 import { strategyExample } from './patterns/strategy';
+import { observableExample } from './patterns/observable';
 
 @Component({
   selector: 'app-root',
@@ -25,17 +26,18 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) {}
 
   public ngOnInit(): void {
-    const rxJSExamples = new RxJSExamples(this.injector);
-    const socketExample = new WebSocketExample();
-    const worker1 = new WorkerPerson('Mark', 'Johnson', 'frontend-developer');
-    const worker2 = worker1.clone();
-    worker2.post = 'backend-developer';
-    const bmw = new SuperCar('bmw', 'x5');
-    bmw.wroom();
-    bmw.superWroom();
-    console.log(new IPhone().getPrice());
-    commandApplication();
-    strategyExample();
+    // const rxJSExamples = new RxJSExamples(this.injector);
+    // const socketExample = new WebSocketExample();
+    // const worker1 = new WorkerPerson('Mark', 'Johnson', 'frontend-developer');
+    // const worker2 = worker1.clone();
+    // worker2.post = 'backend-developer';
+    // const bmw = new SuperCar('bmw', 'x5');
+    // bmw.wroom();
+    // bmw.superWroom();
+    // console.log(new IPhone().getPrice());
+    // commandApplication();
+    // strategyExample();
+    observableExample();
     // console.log(worker1, worker2);
   }
 

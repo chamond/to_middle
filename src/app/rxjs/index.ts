@@ -101,7 +101,7 @@ export class RxJSExamples {
       tap((counter) => {
         // console.log(counter);
       }),
-      publish()
+      publish(),
     ) as ConnectableObservable<number>;
     coldSource.connect();
 
