@@ -2,17 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const basicAuth = require('express-basic-auth');
 const { btoa } = require('buffer');
+const path = require('path');
 
 const app = express();
 const port = 3000;
 app.use(cors());
 app.use(basicAuth({
+  challenge: true,
   users: {
     'dmitry': '11112222' // определяем пользователей на сервере
   }
 }))
 app.get('/', (req, res) => {
-  res.send('Authorized, Hello!');
+  res.sendFile(path.join(__dirname, '/index.html'));
 })
 app.listen(port, () => {
   console.log('server is set up on ' + port);
