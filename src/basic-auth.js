@@ -14,6 +14,7 @@ app.use(basicAuth({
   }
 }))
 app.get('/', (req, res) => {
+  // res.status(401);
   res.sendFile(path.join(__dirname, '/index.html'));
 })
 app.listen(port, () => {
