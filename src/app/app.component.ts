@@ -6,6 +6,7 @@ import WorkerPerson from './patterns/prototype';
 import { SuperCar } from './patterns/decorator';
 import { IPhone } from './patterns/composite';
 import { commandApplication } from './patterns/command';
+import { strategyExample } from './patterns/strategy';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     bmw.superWroom();
     console.log(new IPhone().getPrice());
     commandApplication();
+    strategyExample();
     // console.log(worker1, worker2);
   }
 

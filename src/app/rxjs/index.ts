@@ -65,13 +65,13 @@ export class RxJSExamples {
     scanSource.pipe(
       scan((acc, c) => acc + c)
     ).subscribe(result => {
-      // console.log(result);
+      // console.log(`scan result: ${ result }`);
     });
 
     scanSource.pipe(
       reduce((acc, c) => acc + c, 0)
     ).subscribe(result => {
-      // console.log(result);
+      // console.log(`reduce result: ${ result }`);
     });
 
     const propertiesSource = from([
@@ -81,17 +81,17 @@ export class RxJSExamples {
       { houseId: 20, number: '2' }
     ]);
     propertiesSource.pipe(
-      groupBy((property) => property.houseId),
+      groupBy((property) => property.houseId), // вернет сгруппированный Observable
       mergeMap(group => group.pipe(toArray()))
     ).subscribe(groups => {
-      // console.log(groups);
+      // console.log(`groupBy result: `, groups);
     });
 
     // Копит буфер, пока closingSelector не эмитнет значение
     click.pipe(
       bufferWhen(() => interval(1000 + Math.random() * 4000))
     ).subscribe(x => {
-      // console.log(x);
+      // console.log(`buffer when: ${ x }`);
     });
 
     // ------------------------------------------------------------------- //
@@ -115,11 +115,11 @@ export class RxJSExamples {
 
     const asyncSubject = new AsyncSubject();
     asyncSubject.subscribe(value => {
-      console.log(value);
+      console.log(`async value: ${ value }`);
     });
     asyncSubject.next(100);
     asyncSubject.subscribe(value => {
-      console.log(value);
+      console.log(`async value: ${ value }`);
     });
     asyncSubject.next(200);
     asyncSubject.complete();
