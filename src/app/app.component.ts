@@ -9,6 +9,7 @@ import { commandApplication } from './patterns/command';
 import { strategyExample } from './patterns/strategy';
 import { observableExample } from './patterns/observable';
 import Calculator from './patterns/prototype';
+import { builderExample } from './patterns/builder';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // commandApplication();
     // strategyExample();
     // observableExample();
+    builderExample();
     // console.log(worker1, worker2);
   }
 
