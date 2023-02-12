@@ -8,6 +8,7 @@ import { IPhone } from './patterns/composite';
 import { commandApplication } from './patterns/command';
 import { strategyExample } from './patterns/strategy';
 import { observableExample } from './patterns/observable';
+import Calculator from './patterns/prototype';
 
 @Component({
   selector: 'app-root',
@@ -28,16 +29,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   public ngOnInit(): void {
     // const rxJSExamples = new RxJSExamples(this.injector);
     // const socketExample = new WebSocketExample();
-    // const worker1 = new WorkerPerson('Mark', 'Johnson', 'frontend-developer');
-    // const worker2 = worker1.clone();
-    // worker2.post = 'backend-developer';
+    const calculator1 = new Calculator('scientifical');
+    calculator1.plus(5);
+    console.log(calculator1.multi(10));
+    const calculator2 = calculator1.clone();
+    console.log(calculator2.divide(3));
+    console.log(calculator1.multi(2));
     // const bmw = new SuperCar('bmw', 'x5');
     // bmw.wroom();
     // bmw.superWroom();
     // console.log(new IPhone().getPrice());
     // commandApplication();
     // strategyExample();
-    observableExample();
+    // observableExample();
     // console.log(worker1, worker2);
   }
 
