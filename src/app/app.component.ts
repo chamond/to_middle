@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
 import { RxJSExamples } from './rxjs';
 import { interval, Observable } from 'rxjs';
-import { WebSocketExample } from './websocket';
+import { webSocketExample } from './websocket';
 import WorkerPerson from './patterns/prototype';
 import { SuperCar } from './patterns/decorator';
 import { IPhone } from './patterns/composite';
@@ -44,6 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // strategyExample();
     // observableExample();
     builderExample();
+    webSocketExample();
     // console.log(worker1, worker2);
   }
 
